@@ -1,0 +1,196 @@
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the home page.
+// -----------------------------------------------------------------------------
+.main-title{
+  &__name{
+    @include bg("idx-tit.jpg",$background-repeat: repeat,$background-size: null,$background-position: 0 0);
+    @include setFont(18px, #000, 900, $font-text);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    a,span{
+      @include grid(inline-flex, $flex-wrap: wrap, $justify-content: null, 
+        $align-items: center, $gutter: null);
+      min-height: 46px;
+      background-color: #e7090c;
+      color: #fff;
+      padding: 0 15px;
+    }
+  }
+  @include media("<=mobile"){
+  }
+}
+.sanpham-noibat{
+  margin-bottom: 20px;
+}
+.tintuc-noibat{
+  background-size: cover;
+  padding: 40px 0;
+  &__title{
+    @include bg("gach.png",$background-repeat: repeat,$background-size: null,$background-position: 0 0);
+    @include setFont(24px, #fff, 900, $font-text);
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    &-url{
+      @include grid(inline-flex, $flex-wrap: wrap, $justify-content: null, 
+        $align-items: center, $gutter: null);
+      min-height: 43px;
+      color: #fff;
+      position: relative;
+      @include p-el(before, $el-width: 100%, $el-height: 5px){
+        background-color: #ffde00;
+        bottom: 0;
+      }
+    }
+  }
+  &-list{
+    @include grid($display: flex, $flex-wrap:wrap, $gutter:1%);
+  }
+  &-item{
+    @include grid-col($col: 6, $grid-columns:12, $gutter:1%);
+    &__url{
+      @include grid(flex, $flex-wrap: wrap, $justify-content: space-between, 
+        $align-items: null, $gutter: null);
+      padding: 15px;
+      background-color: #fff;
+    }
+    &__image{
+      width: percentage(143/464);
+    }
+    &__figure{
+      padding-top: percentage(120/143);
+      margin-bottom: 0;
+      position: relative;
+    }
+    &__img{
+      @extend %img-fill;
+    }
+    &__info{
+      width: percentage(307/464);
+    }
+    &__name{
+      @include setFont(14px, #000, 900, $font-text);
+      @include line-clamp($font-size: 14px, $line-height: 1.5, $lines-to-show: 2, $max-height: false);
+      text-transform: uppercase;
+
+      margin-bottom: 0;
+    }
+    &__post{
+      @include grid(flex, $flex-wrap: wrap, $justify-content: null, 
+        $align-items: center, $gutter: null);
+      @include setFont(12px, #505050, 400, $font-text);
+      margin: 4px 0;
+      i{
+        font-size: 16px;
+        color: #ff3115;
+        margin-right: 5px;
+      }
+    }
+    &__desc{
+      @include setFont(14px, #505050, 400, $font-text);
+      @include line-clamp($font-size: 14px, $line-height: 1.5, $lines-to-show: 2, $max-height: false);
+      margin-bottom: 0;
+    }
+  }
+}
+.tagseo{
+  $tagseo-gut: percentage(6/$max-width);
+  padding: 40px 0;
+  &__title{
+    @include bg("gach.png",$background-repeat: repeat,$background-size: null,$background-position: 0 0);
+    @include setFont(20px, #333, 700, $font-text);
+    @include grid(flex, $flex-wrap: wrap, $justify-content: null, 
+      $align-items: center, $gutter: null);
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    min-height: 43px;
+    position: relative;
+    @include p-el(before, $el-width: 80px, $el-height: 5px){
+      background-color: $theme-color;
+      bottom: 0;
+    }
+  }
+  &-list{
+    @include grid($display: flex, $flex-wrap:wrap, $gutter: $tagseo-gut);
+  }
+  &-item{
+    @include grid-col($col: 2, $grid-columns:14, $gutter: $tagseo-gut);
+    @include grid(inline-flex, $flex-wrap: wrap, $justify-content: center, 
+      $align-items: center, $gutter: null);
+    @include setFont(14px, #333, 400, $font-text);
+    @include transition(color 0.2s ease);
+    min-height: 40px;
+    border: 1px solid #e8e8e8;
+    border-radius: 5px;
+    &:hover{
+      color: $theme2-color;
+    }
+    @include media("<=medium"){
+      @include grid-col($col: 3, $grid-columns:9, $gutter: $tagseo-gut);
+    }
+    @include media("<=mobile"){
+      @include grid-col($col: 6, $grid-columns:12, $gutter: $tagseo-gut);
+    }
+  }
+}
+
+.switch-field {
+  @include grid(flex);
+  @include absolute($left: 0px, $top: -63px);
+  margin-bottom: 36px;
+  overflow: hidden;
+  input {
+    @include box(1px,1px);
+    position: absolute !important;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+    overflow: hidden; 
+    &:checked + label {
+      background-color: $theme2-color;
+      color: #fff;
+    }
+  }
+  label {
+    @include setFont(18px, #000, 900, $font-text);
+    @include transition(all 0.1s ease-in-out);
+    text-transform: uppercase;
+    background-color: #ffd800;
+    line-height: 1;
+    text-align: center;
+    padding: 15px 20px;
+    margin: 0 3px 0 0;
+    &:hover {
+      cursor: pointer;
+    }
+    @include media("<=medium"){
+      @include font-size(14);
+    }
+  }
+}
+.tim-bds{
+  background-color: $theme2-color;
+  padding: 15px 0;
+  position: relative;
+  z-index: 50;
+  .form-group{
+    margin-bottom: 5px;
+    .form-control{
+      border-radius: 0;
+      height: 43px;
+    }
+    &.d-flex{
+      .form-control{
+        @include flex(1);
+        margin-right: 5px;
+        border-radius: 0;
+        height: 43px;
+      }
+      .btn{
+        @include box(110px, 43px,0);
+        @include setFont(14px, #000, 900, $font-text);
+        text-transform: uppercase;
+        background-color: #ffd800;
+        border-color: #ffd800;
+      }
+    }
+  }
+}

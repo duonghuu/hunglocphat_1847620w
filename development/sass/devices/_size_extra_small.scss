@@ -1,0 +1,13 @@
+@media screen 
+	and (min-width: $device_size_mobile)
+	and (max-width: $device_size_small) {
+      @include setCommon;
+      @include setTimbds;
+      @include setLeftRightMobile;
+      @include setSlider;
+      @include setHeader;
+      @include setMenu;
+      // @include setProductColumnMobile($p_col: 15, $p_gutter: $product-gutter);
+      @include setCopyright;
+      @include setFooter;
+}

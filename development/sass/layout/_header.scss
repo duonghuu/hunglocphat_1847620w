@@ -1,0 +1,68 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the header of the site/application.
+// -----------------------------------------------------------------------------
+.header{
+  @include bg("banner.jpg",$background-repeat: no-repeat,$background-size: cover,$background-position: 0 0);
+  &__wrap{
+    @include grid(flex, $flex-wrap: nowrap, $justify-content: space-between, 
+      $align-items: stretch, $gutter: null);
+    min-height: 130px;
+  }
+  &__logo{
+    @include grid(inline-flex, $flex-wrap: null, $justify-content: null, 
+      $align-items: center, $gutter: null);
+    &-img{
+      max-height: 110px;
+    }
+  }
+  &__info{
+    text-align: center;
+    &-text{
+      @include setFont(16px, #033333, 700, $font-UTMAvo);
+      margin-bottom: 0px;
+      &--big{
+        @include setFont(25px, #033333, 700, $font-UTMHelvetIns);
+        text-transform: uppercase;
+        margin: 25px 0 5px;
+      }
+    }
+    &-url{
+      @include text-shadow(2px,2px, 0,#fff, 3px,4px,5px,rgba(0,0,0,0.21));
+      color: #ff0000;
+      display: inline-block;
+    }
+    &-right{
+      @include grid(inline-flex, $flex-wrap: wrap, $justify-content: flex-end, 
+        $align-items: flex-end, $gutter: null, $flex-direction: column);
+    }
+  }
+  &__email{
+    @include grid(flex, 
+      $align-items: center);
+    @include setFont(16px, #fff, 400, $font-text);
+    height: 40px;
+    padding: 0 50px 0 20px;
+    background-color: #f80109;
+    -webkit-border-top-left-radius: 10px;
+    -webkit-border-top-right-radius: 10px;
+    -moz-border-radius-topleft: 10px;
+    -moz-border-radius-topright: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    &-img{
+      margin-right: 10px;
+    }
+  }
+  &__hotline{
+    @include grid(flex, $flex-wrap: nowrap, $justify-content: flex-start, 
+      $align-items: center, $gutter: null);
+    width: 100%;
+    margin-bottom: 5px;
+    &-img{}
+    &-number{
+      @include setFont(28px, #ffd800, 400, $font-UTMHelvetIns);
+      @include text-shadow(0px,2px,0px,#000,-1px,-2px,0px,#000);
+      display: inline-block;
+    }
+  }
+}

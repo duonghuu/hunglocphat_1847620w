@@ -1,0 +1,60 @@
+.box-menu-slider{
+    border: 1px solid #f6f6f6;
+    width: percentage(270/$max-width);
+    position: relative;
+    z-index: 2;
+    ul{
+        @extend %reset-list;
+    }
+}
+.menu-left{
+    background-color: #f7f7f7;
+    border: 1px solid #ebebeb;
+    height: 100%;
+    max-height: 440px;
+    overflow-y: auto;
+    &>li{
+    }
+    li{
+        padding: 13px 15px;
+        position: static;
+        
+        a{
+            @include setFont(14px, #333, 500);
+            @include grid(flex, $flex-wrap: nowrap, $justify-content: null,
+              $align-items: center, $gutter: null);
+            text-decoration: none;
+            figure{
+                @include box(30px,30px);
+                @include absolute($left: 7px, $top: 7px);
+                margin: 0 5px 0 0;
+                img{
+                    @extend %img-fill;
+                    object-fit: scale-down;
+                    object-position: center center;
+                }
+            }
+
+            &:before {
+                @include setFont(13px, #808080, 700, $font-awesome);
+                position: relative;
+                content: "\f105";
+                margin-right: 10px;
+            }
+        }
+        &:hover{
+            & > ul{
+                display: block;
+            }
+        }
+        ul{
+            @extend %sub-menu-list;
+            left: calc(100% - 5px);
+            top: 0;
+            width: 100%;
+        }
+        @include doubly(){
+            border-top: 1px solid #ebebeb;
+        }
+    }
+}
