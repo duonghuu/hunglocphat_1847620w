@@ -1,5 +1,4 @@
 <div class="nav-bg">
-    <div class="container">
       <div class="main-nav">
         <ul>
           <?php include _template."layout/menu_content.php";?>
@@ -28,7 +27,6 @@
         </button></div> </div> 
 
     */?>
-  </div>
   </div>
 <?php /* 
 <script> function openSearch() {document.getElementById("myOverlay").style.display = "block"; } function closeSearch() {document.getElementById("myOverlay").style.display = "none"; } </script> 

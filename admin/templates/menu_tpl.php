@@ -68,7 +68,7 @@
             <ul class="sub">
                 <?php //phanquyen_menu('Giới thiệu','about','capnhat','gioi-thieu'); ?>
                 <?php phanquyen_menu('Cập nhật liên hệ','about','capnhat','lienhe'); ?>
-                <?php phanquyen_menu('Cập nhật footer','about','capnhat','footer'); ?>
+                <?php //phanquyen_menu('Cập nhật footer','about','capnhat','footer'); ?>
             </ul>
         </li>
         <li class="categories_li <?php if($_GET['type']=='txtnewsletter' || 

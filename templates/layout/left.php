@@ -1,41 +1,22 @@
 <?php //include _template."layout/sanpham_boloc.php";?>
 <div class="widget">
-  <div class="widget__title">Danh mục sản phẩm</div>
+  <div class="widget__title"><?= _duan ?></div>
   <div class="widget__box">
-    <div class="widget__links">
-      <?php foreach($linksanpham as $k=>$v) {
-       ?>
-      <p class="widget__link"><a class="widget__link-url" href="<?= $v["link"] ?>"><?= $v["ten"] ?></a></p>
-      <?php } ?>
-    </div>
   </div>
 </div>
 <div class="widget">
-  <div class="widget__title">Dịch vụ nổi bật</div>
+  <div class="widget__title"><?= _hotrotructuyen ?></div>
   <div class="widget__box">
-    <div class="widget__links">
-      <?php foreach($dichvu_list as $k=>$v) {
-        $link = $v["type"]."/".$v["tenkhongdau"]."-".$v["id"].".html";
-       ?>
-      <p class="widget__link"><a class="widget__link-url" href="<?= $link ?>"><?= $v["ten"] ?></a></p>
-      <?php } ?>
-    </div>
   </div>
 </div>
 <div class="widget">
+  <div class="widget__title">Nhận ký gửi</div>
   <div class="widget__box">
-    <div class="quangcao">
-      <?php foreach($quangcao as $k=>$v) {
-        $link = $v["type"]."/".$v["tenkhongdau"]."-".$v["id"].".html";
-        $img = _upload_hinhanh_l.$v["thumb"];
-       ?>
-      <p class="quangcao-item">
-        <a class="quangcao-item__url" href="<?= $v["link"] ?>">
-          <img src="<?= $img ?>" alt="<?= $v["ten"] ?>" class="quangcao-item__img">
-        </a>
-      </p>
-      <?php } ?>
-    </div>
+  </div>
+</div>
+<div class="widget">
+  <div class="widget__title">Hỗ trợ pháp lý</div>
+  <div class="widget__box">
   </div>
 </div>
 <?php /* <div class="hotro danhmuc">

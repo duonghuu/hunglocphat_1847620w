@@ -1,4 +1,6 @@
 <li class="<?php if($source=='index') echo 'active'; ?>"><a href=""><?= _trangchu ?></a></li>
+<li class="<?php if($com=='gioi-thieu') echo 'active'; ?>"><a href="gioi-thieu.html">
+<?= _gioithieu ?></a></li> 
 <?php 
 $str='';
 for($i=0;$i<count($product_danhmuc);$i++){
@@ -19,24 +21,18 @@ for($i=0;$i<count($product_danhmuc);$i++){
 echo $str;
  ?>
 <?php /* 
-<li class="<?php if($com=='gioi-thieu') echo 'active'; ?>"><a href="gioi-thieu.html">
-<?= _gioithieu ?></a></li> 
+
  <li class="<?php if($com=='san-pham') echo 'active'; ?>"><a href="san-pham.html">
  <?= _sanpham ?></a>
  <?= for2cap('product_danhmuc','product_list','san-pham','san-pham','','/')?> 
  </li> 
  */?> 
- <li class="<?php if($com=='tu-van') echo 'active'; ?>"><a href="tu-van.html">
- Tư vấn thiết kế</a>
- <?= for1('news_danhmuc','tu-van','tu-van','')?>
+ <li class="<?php if($com=='du-an') echo 'active'; ?>"><a href="du-an.html">
+<?= _duan ?></a>
+ <?= for1('news_danhmuc','du-an','du-an','')?>
 </li>
- <li class="<?php if($com=='xay-dung') echo 'active'; ?>"><a href="xay-dung.html">
- Xây dựng sửa chữa</a>
-<?= for1('news_danhmuc','xay-dung','xay-dung','')?></li>
- <li class="<?php if($com=='ky-gui') echo 'active'; ?>"><a href="ky-gui.html">
- Ký gửi</a></li>
- <li class="<?php if($com=='tuyen-dung') echo 'active'; ?>"><a href="tuyen-dung.html">
- <?= _tuyendung ?></a></li>
+ <li class="<?php if($com=='tin-tuc') echo 'active'; ?>"><a href="tin-tuc.html">
+ <?= _tintuc ?></a></li>
 <li class="<?php if($com == 'lien-he') echo 'active'; ?>"><a href="lien-he.html">
   <?= _lienhe ?></a></li>
 <?php /* 

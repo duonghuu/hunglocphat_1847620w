@@ -24,14 +24,12 @@ function doEnter(evt){
   }
 }
  function onSearch2(evt) {
-   var keyword = $('#keyword').val();
-   var id_huong = $('#id_huong').val();
-   var id_danhmuc = $('input[name="id_danhmuc"]').val();
+   var id_danhmuc = $('#id_danhmuc').val();
    var id_list = $('#id_list').val();
    var id_khoanggia = $('#id_khoanggia').val();
    var thanhpho = $('#thanhpho').val();
    var quan = $('#quan').val();
-   location.href = "tim-kiem/id_huong="+id_huong+"&id_danhmuc="+id_danhmuc+"&id_list="+id_list+"&id_khoanggia="+id_khoanggia+"&id_city="+thanhpho+"&id_dist="+quan+"&keyword="+keyword;
+   location.href = "tim-kiem/id_danhmuc="+id_danhmuc+"&id_list="+id_list+"&id_khoanggia="+id_khoanggia+"&id_city="+thanhpho+"&id_dist="+quan;
 }
 $(document).ready(function() {
   $('.timkiem_icon').click(function(event) {

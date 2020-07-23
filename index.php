@@ -45,7 +45,6 @@ include_once _source."counter.php";
         <section class="head-main">
             <?php 
             include _template."layout/header.php";
-            include _template."layout/menu_top.php";
             include _template."layout/valak_menu.php";
             
             include _template."layout/slider.php";

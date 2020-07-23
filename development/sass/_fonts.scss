@@ -128,24 +128,3 @@
        url($font-url+'roboto-v20-latin_vietnamese-900italic.ttf') format('truetype'), /* Safari, Android, iOS */
        url($font-url+'roboto-v20-latin_vietnamese-900italic.svg#Roboto') format('svg'); /* Legacy iOS */
 }
-@font-face {
-    font-family: 'UTMAvo';
-    font-display: swap;font-style: normal;font-weight: 700;
-    src: url($font-url+'UTMAvoBold.eot');
-    src: url($font-url+'UTMAvoBold.eot') format('embedded-opentype'),
-         url($font-url+'UTMAvoBold.woff2') format('woff2'),
-         url($font-url+'UTMAvoBold.woff') format('woff'),
-         url($font-url+'UTMAvoBold.ttf') format('truetype'),
-         url($font-url+'UTMAvoBold.svg#UTMAvoBold') format('svg');
-}
-@font-face {
-    font-family: 'UTMHelvetIns';
-    font-display: swap;font-style: normal;font-weight: 400;
-    src: url($font-url+'UTMHelvetIns.eot');
-    src: url($font-url+'UTMHelvetIns.eot') format('embedded-opentype'),
-         url($font-url+'UTMHelvetIns.woff2') format('woff2'),
-         url($font-url+'UTMHelvetIns.woff') format('woff'),
-         url($font-url+'UTMHelvetIns.ttf') format('truetype'),
-         url($font-url+'UTMHelvetIns.svg#UTMHelvetIns') format('svg');
-}
-

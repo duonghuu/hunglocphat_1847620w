@@ -5,16 +5,16 @@ $id_city = (int)$_GET["id_city"];
 $id_dist = (int)$_GET["id_dist"];
 $id_khoanggia = (string)magic_quote(trim(strip_tags($_GET['id_khoanggia'])));
 // $id_dientich = (string)magic_quote(trim(strip_tags($_GET['id_dientich'])));
-$id_huong = (int)$_GET["id_huong"];
 
 $a_khoanggia = explode('-', $id_khoanggia);
 // $a_dientich = explode('-', $id_dientich);
 
 $where = " type='".$type."' and hienthi=1 ";
-if($id_huong > 0) $where .= " and id_huong='".$id_huong."'";
-if($id_khoanggia != "") $where .= " and (gia between ".$a_khoanggia[0]." and ".$a_khoanggia[1].")";
-if($id_dientich != "") $where .= " and (dientich between ".$a_dientich[0]." and ".$a_dientich[1].")";
+if($id_khoanggia != "") $where .= " and (dientich between ".$a_khoanggia[0]." and ".$a_khoanggia[1].")";
 if($id_danhmuc > 0) $where .= " and id_danhmuc='".$id_danhmuc."'";
+if($id_list > 0) $where .= " and id_list='".$id_list."'";
+if($id_city > 0) $where .= " and id_city='".$id_city."'";
+if($id_dist > 0) $where .= " and id_dist='".$id_dist."'";
 $where .= " order by stt asc";
 
 // $dem = get_fetch("SELECT count(id) AS numrows FROM #_product where $where");

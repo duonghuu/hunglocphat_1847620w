@@ -41,20 +41,13 @@
          <div class="tim-bds">
            <div class="container">
              <form action="" method="post">
-               <div class="switch-field">
-                 <?php foreach($product_danhmuc as $kdm=>$vdm) {
-                   
-                  ?>
-                 <input type="radio" id="radio-<?= $vdm["id"] ?>" name="id_danhmuc" 
-                 value="<?= $vdm["id"] ?>" <?= ($kdm==0)?'checked':'' ?> />
-                 <label for="radio-<?= $vdm["id"] ?>"><?= $vdm["ten"] ?></label>
-               <?php } ?>
-               </div>
-
-               <div class="form-group">
-                 <input type="text" id="keyword" placeholder="Từ khóa tìm kiếm" class="form-control">
-               </div>
                <div class="form-group d-flex">
+                <select name="id_danhmuc" id="id_danhmuc" class="form-control">
+                  <option value="">Danh mục</option>
+                  <?php foreach($product_danhmuc as $k=>$v) { ?>
+                  <option value="<?= $v["id"] ?>"><?= $v["ten"] ?></option>
+                  <?php } ?>
+                </select>
                  <?php 
                  if(!empty($product_danhmuc)){
                    $search_product_list = get_result("select ten$lang as ten,tenkhongdau,id 
@@ -76,14 +69,8 @@
                  <select name="id_dist" id="quan" class="form-control">
                    <option value="">Chọn quận/huyện</option>
                  </select>
-                 <select name="id_huong" id="id_huong" class="form-control">
-                   <option value="">Chọn hướng</option>
-                   <?php foreach($search_huong as $k=>$v) { ?>
-                   <option value="<?= $v["id"] ?>"><?= $v["ten"] ?></option>
-                   <?php } ?>
-                 </select>
                  <select name="id_khoanggia" id="id_khoanggia" class="form-control">
-                   <option value="">Chọn giá</option>
+                   <option value="">Diện tích</option>
                    <?php foreach($search_khoanggia as $k=>$v) { ?>
                    <option value="<?= $v["chucvu"] ?>-<?= $v["link"] ?>"><?= $v["ten"] ?></option>
                    <?php } ?>
