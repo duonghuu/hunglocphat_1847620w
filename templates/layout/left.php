@@ -2,6 +2,21 @@
 <div class="widget">
   <div class="widget__title"><?= _duan ?></div>
   <div class="widget__box">
+    <div class="tinmoi-container">
+      <ul>
+        <?php foreach($duan as $k=>$v) { 
+        $link = get_url($v, $v["type"]);
+        $imgurl='<img class="tinmoi-item__figure-img" src="'._upload_tintuc_l.$v["thumb"].'" alt="'.$v["ten"].'"  />';
+          ?>
+          <li class="tinmoi-item">
+            <a class="tinmoi-item__url" href="<?= $link ?>">
+              <figure class="tinmoi-item__figure"><?= $imgurl ?></figure>
+              <h3 class="tinmoi-item__name"><?= $v["ten"] ?></h3>
+            </a>
+          </li>
+        <?php } ?>
+      </ul>
+    </div>
   </div>
 </div>
 <div class="widget">
@@ -12,11 +27,47 @@
 <div class="widget">
   <div class="widget__title">Nhận ký gửi</div>
   <div class="widget__box">
+    <div class="tinmoi-container">
+      <ul>
+        <?php foreach($kygui as $k=>$v) { 
+        $link = get_url($v, $v["type"]);
+        $imgurl='<img class="tinmoi-item__figure-img" src="'._upload_tintuc_l.$v["thumb"].'" alt="'.$v["ten"].'"  />';
+          ?>
+          <li class="tinmoi-item">
+            <a class="tinmoi-item__url" href="<?= $link ?>">
+              <figure class="tinmoi-item__figure"><?= $imgurl ?></figure>
+              <h3 class="tinmoi-item__name"><?= $v["ten"] ?></h3>
+            </a>
+          </li>
+        <?php } ?>
+      </ul>
+    </div>
   </div>
 </div>
 <div class="widget">
   <div class="widget__title">Hỗ trợ pháp lý</div>
   <div class="widget__box">
+    <div class="tinmoi-container">
+      <ul>
+        <?php foreach($hotro as $k=>$v) { 
+        if(!empty($v["link"])){
+          $target = 'target="_blank"';
+          $link = (string)magic_quote(trim(strip_tags($v['link'])));
+        }else{
+          $target = '';
+          $link = get_url($v, $v["type"]);
+        }
+        $imgurl='<img class="tinmoi-item__figure-img" src="'._upload_tintuc_l.$v["thumb"].'" alt="'.$v["ten"].'"  />';
+          ?>
+          <li class="tinmoi-item">
+            <a <?= $target ?> class="tinmoi-item__url" href="<?= $link ?>">
+              <figure class="tinmoi-item__figure"><?= $imgurl ?></figure>
+              <h3 class="tinmoi-item__name"><?= $v["ten"] ?></h3>
+            </a>
+          </li>
+        <?php } ?>
+      </ul>
+    </div>
   </div>
 </div>
 <?php /* <div class="hotro danhmuc">

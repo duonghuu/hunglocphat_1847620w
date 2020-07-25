@@ -1,13 +1,13 @@
-<div class="newsletter">
-  <div class="container d-flex">
-    <div class="newsletter__head">
-      <img src="images/dknt.png" alt="newsletter" class="newsletter__head-img">
-      <strong class="newsletter__head-title"><?= _dangkynhantin ?></strong>
-    </div>
-    <?php include _template."layout/dangkynhantin.php"; ?>
-  </div>
-</div>
 <footer id="footer" class="ft">
+  <div class="newsletter">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div class="newsletter__head">
+        <img src="images/dknt.png" alt="newsletter" class="newsletter__head-img">
+        <strong class="newsletter__head-title"><?= _dangkynhantin ?></strong>
+      </div>
+      <?php include _template."layout/dangkynhantin.php"; ?>
+    </div>
+  </div>
   <div class="ft-top ">
     <div class="container">
       <div class="ft-flex">

@@ -371,7 +371,6 @@ function lay_slider($type,$class='',$width=0,$height=0,$zc=2){
 					<h3><a href="'.$link.'">'.$v["ten"].'</a></h3>
 					<p><i class="fas fa-map-marker-alt"></i><strong>Giá:</strong><span>'.$v["vitri"].'</span></p>
 					<p><i class="fas fa-dollar-sign"></i><strong>Diện tích:</strong>'.$v["dientich"].'</p>
-					<p><i class="fas fa-bed"></i><strong>Phòng ngủ:</strong>'.$v["mattien"].'</p>
 					<p><i class="fas fa-location-arrow"></i><strong>Quận Huyện:</strong>'.$get_dist["ten"].'</p>
 				</div>
 				'.$linkct.'

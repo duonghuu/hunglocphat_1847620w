@@ -1,14 +1,14 @@
 <header class="header" >
   <div class="header-top">
-    <div class="container d-flex">
+    <div class="container d-flex justify-content-between align-items-center">
       <p class="header-top__text">
         <i class="fas fa-home"></i><?= _diachi.": ".$company["diachi"] ?>
       </p>
       <p class="header-top__text">
-        <i class="fas fa-home"></i><?= _email.": ".$company["email"] ?>
+        <i class="fas fa-envelope"></i><?= _email.": ".$company["email"] ?>
       </p>
       <p class="header-top__text">
-        <i class="fas fa-home"></i><?= "Phone: ".$company["dienthoai"] ?>
+        <i class="fas fa-phone-volume"></i><?= "Phone: ".$company["dienthoai"] ?>
       </p>
     </div>
   </div>

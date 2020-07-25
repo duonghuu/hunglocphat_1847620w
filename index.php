@@ -55,12 +55,12 @@ include_once _source."counter.php";
             <div class="main_content <?php if($source!="index1") echo 'container';?>">
                 <?php if($template != 'productxx') {  ?>
                     <div class="clearfix">
-                        <div class="left">
-                            <?php include _template."layout/left.php";?>
-                        </div><!---END .left-->
                         <div class="right">
                             <?php include _template.$template."_tpl.php"; ?>
                         </div><!---END .right-->
+                        <div class="left">
+                            <?php include _template."layout/left.php";?>
+                        </div><!---END .left-->
                     </div>
                 <?php }else{ ?>
                     <?php include _template.$template."_tpl.php"; ?>

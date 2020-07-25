@@ -40,7 +40,7 @@
         <input type="hidden" value="1" name="nltval">
         <input type="hidden" value="<?= time() ?>" name="nlttoken">
         <input type="hidden" name="recaptchaResponse_dknt" id="recaptchaResponse_dknt">
-        <div id="submit_nhantin"><i class="fas fa-paper-plane"></i></div>
+        <div id="submit_nhantin"><i class="fas fa-paper-plane"></i>Đăng ký ngay</div>
     </form>
 </div>
 

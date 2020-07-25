@@ -3,9 +3,16 @@ if($source=="index"){
  
   $tinnb = get_result("select id,ten$lang as ten,mota$lang as mota,thumb,photo,tenkhongdau,ngaytao,type from #_news
    where type='tin-tuc' and noibat>0 and hienthi>0 order by stt limit 0,6");
-  // $video=get_result("select id,ten$lang as ten,tenkhongdau,link,thumb,photo
-  //  from #_video where hienthi=1 and type='video' order by stt");
 }
+  $video=get_result("select id,ten$lang as ten,tenkhongdau,link,thumb,photo
+   from #_video where hienthi=1 and type='video' order by stt");
+$duan = get_result("select id,ten$lang as ten,mota$lang as mota,thumb,photo,tenkhongdau,ngaytao,type from #_news
+ where type='du-an' and noibat>0 and hienthi>0 order by stt");
+$kygui = get_result("select id,ten$lang as ten,mota$lang as mota,thumb,photo,tenkhongdau,ngaytao,type from #_news
+ where type='ky-gui' and hienthi>0 order by stt");
+$hotro = get_result("select id,ten$lang as ten,mota$lang as mota,thumb,photo,tenkhongdau,ngaytao,type,link from #_news
+ where type='ho-tro' and hienthi>0 order by stt");
+
   $dichvu_list = get_result("select id,ten$lang as ten,mota$lang as mota,thumb,photo,tenkhongdau,ngaytao,type from #_news
    where type='dich-vu' and hienthi>0 order by stt");
   $linksanpham = get_result("select id,ten$lang as ten,link from #_news

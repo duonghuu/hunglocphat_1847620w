@@ -11,6 +11,31 @@ $(document).ready(function() {
       }
     });
   });
+  $('.video-main').slick({
+      centerMode: true,
+        centerPadding: '0',
+        slidesToShow: 3,
+        responsive: [
+          {
+            breakpoint: 768,
+            settings: {
+              arrows: false,
+              centerMode: true,
+              centerPadding: '40px',
+              slidesToShow: 3
+            }
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              arrows: false,
+              centerMode: true,
+              centerPadding: '40px',
+              slidesToShow: 1
+            }
+          }
+        ]
+  });
     $('.quangcao2-main').on({
           beforeChange: function(event, slick, currentSlide, nextSlide) {
               myLazyLoad.update();

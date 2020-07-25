@@ -1,17 +1,19 @@
 <div class="videoduan lazy" data-bg="url('images/video-bg.jpg')">
   <div class="container">
     <div class="videoduan__title text-center text-uppercase"><span>Video dự án</span></div>
-  </div>
-</div>
-<div class="tagseo">
-  <div class="container">
-    <div class="tagseo__title">
-      tag seo : tìm kiếm nhu cầu phù hợp
-    </div>
-    <div class="tagseo-list">
-      <?php foreach($tutags as $k=>$v) { 
-        echo '<a href="'.$v["link"].'" target="_blank" class="tagseo-item">'.$v["ten"].'</a>';
-      } ?>
+    <div class="video-main">
+      <?php foreach($video as $k=>$v) { 
+        $iden = getYoutubeIdFromUrl($v["link"]);
+        $img = "//i.ytimg.com/vi/".$iden."/mqdefault.jpg";
+        ?>
+        <div class="video-item">
+          <a href="" class="video-item__url">
+            <div class="video-item__image">
+              <figure class="video-item__figure"><img src="<?= $img ?>" alt="" class="video-item__img"></figure>
+            </div>
+          </a>
+        </div>
+      <?php } ?>
     </div>
   </div>
 </div>

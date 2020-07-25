@@ -41,7 +41,7 @@
          <div class="tim-bds">
            <div class="container">
              <form action="" method="post">
-               <div class="form-group d-flex">
+               <div class="form-group d-flex justify-content-between">
                 <select name="id_danhmuc" id="id_danhmuc" class="form-control">
                   <option value="">Danh mục</option>
                   <?php foreach($product_danhmuc as $k=>$v) { ?>
@@ -75,7 +75,9 @@
                    <option value="<?= $v["chucvu"] ?>-<?= $v["link"] ?>"><?= $v["ten"] ?></option>
                    <?php } ?>
                  </select>
-                 <button class="btn btn-primary" type="button" onclick="onSearch2($(this));return false;"><?= _timkiem ?></button>
+                 <button class="btn btn-primary" type="button" 
+                 onclick="onSearch2($(this));return false;">
+                 <i class="fas fa-search"></i><?= _timkiem ?></button>
                </div>  
              </form>
            </div>

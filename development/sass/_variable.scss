@@ -45,13 +45,16 @@ $font-awesome           : 'Font Awesome 5 Free';
 $font-second            : 'Arial';
 $product-ratio          : percentage(145/183);
 $product-gutter         : percentage(1/$max-width);
+$theme-color        : #e08b20;
+$theme2-color        : #efa21c;
+$map-height         : 410 * 1px;
 /* ======================== HEADER ======================== */
 $header_top-bg          : $theme2-color;
 $header-bg              : #fff;
 $breadcrumb-bg          : #f7f6f6;
 /* ======================== MENU ======================== */
 $font-menu              : $font-roboto;
-$menu_item_hover-color  : #f80109;
+$menu_item_hover-color  : $theme2-color;
 $menu-bg                : #d4bc7d;
 $valak-bg               : #d4bc7d;
 $menu_item-bg           : transparent;
@@ -59,9 +62,7 @@ $menu_item_hover-bg     : #ffb400;
 /* ======================== FOOTER ======================== */
 $copyright-bg       : #c6131a;
 $footer-bg          : #cf2228;
-$theme-color        : #e08b20;
-$theme2-color        : #efa21c;
-$map-height         : 410 * 1px;
+
 /* ======================== URL ======================== */
 $font-url           : 'css/fonts/';
 $font-awesome-url   : 'css/fontawesome/webfonts/';

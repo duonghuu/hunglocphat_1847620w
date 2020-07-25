@@ -206,7 +206,7 @@ div#wapper {
     z-index: 1;
     width: 100%;
     overflow: hidden;
-    background-color: #f9f9f9;
+    background-color: #fff;
 }
 
 .menu_login {
@@ -284,18 +284,20 @@ div.slider {
 .widget{
     margin-bottom: 24px;
     &__title{
-        @include setFont(15px, #fff, 900, $font-text);
-        line-height: 46px;
+        @include setFont(18px, #fff, 900, $font-text);
+        line-height: 40px;
         background-color: $theme-color;
         text-transform: uppercase;
+        text-align: center;
         padding: 0 20px;
         i{
             margin: 0 10px;
         }
     }
     &__box{
-        border: 1px solid #f1f1f1;
+        border: 1px solid #ccc;
         background-color: #fff;
+        padding: 15px 10px;
     }
     &__links{
         padding: 5px 16px;
@@ -470,12 +472,9 @@ div#quangcao img:hover {
 }
 
 div#dknt {
-    background-color: #fff;
-    border-radius: 30px;
+    @include flex(1);
+    margin-left: 40px;
     overflow: hidden;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 4px;
 }
 .maildesc{
     @include setFont(12px, #fff);
@@ -487,19 +486,22 @@ form#frm_dknt {
     input[type='text'] {
         @include setFont(14px, #000); 
         @include flex(1);
-        height: 48px;
-        padding: 0 1em;
+        height: 32px;
+        padding: 0 5px;
         background: #fff;
         border: 1px solid #fff;
+        margin-right: 20px;
     }
     #submit_nhantin {
         @include grid($display: inline-flex,$align-items: center,$justify-content: center);
-        @include setFont(16px, #fff, 700);
-        @include box(48px,48px,100%);
-        background-color: #deb666;
-        text-transform: uppercase;
+        @include setFont(14px, #fff, 700);
+        @include flex(1);
+        height: 32px;
+        background-color: #fccc2a;
+        text-transform: capitalize;
         cursor: pointer;
         i{
+            margin-right: 7px;
         }
     }
 }
@@ -513,21 +515,15 @@ div.main_content {
     }
 
     div.left {
-        width: percentage(240/$max-width);
+        width: percentage(280/$max-width);
         z-index: 50;
-        float: left;
+        float: right;
 
-    }
-    div.mid {
-        width: percentage(488/$max-width);
-        z-index: 50;
-        float: left;
-        margin-left: percentage(15/$max-width);
     }
 
     div.right {
-        float: right;
-        width: percentage(240/$max-width);
+        float: left;
+        width: percentage(880/$max-width);
     }
 }
 
@@ -745,24 +741,24 @@ div.wap_item {
                 .slider-link{
                     display: block;
                     position: relative;
-                    padding-top: percentage(475/1366);
+                    padding-top: percentage(444/1366);
                     img {
                         @extend %img-fill;
                     }
                 }
                 .slider-text-bg{
-                    @include grid(flex, $justify-content: null, 
-                      $align-items: center);
-                    @include absolute(0,0,0,0);
+                    // @include grid(flex, $justify-content: null, 
+                    //   $align-items: center);
+                    // @include absolute(0,0,0,0);
                     .slider-text{
-                        width: 100%;
-                        max-width: 780px;
-                        margin: 0 auto;
-                        opacity: 0;
-                        text-align: center;
+                        // width: 100%;
+                        // max-width: 780px;
+                        // margin: 0 auto;
+                        // opacity: 0;
+                        // text-align: center;
                         &__welcome{
-                            @include setFont(15px, #fff);
-                            margin-bottom: 0;
+                            // @include setFont(15px, #fff);
+                            // margin-bottom: 0;
                         }
                         &__ten{
                             // @include setFont(50px, #fff, 400, 'SFUDinEngAlt');
@@ -777,15 +773,15 @@ div.wap_item {
                             //  margin: 10px 0;
                         }
                         &__mota{
-                            @include setFont(20px, #fff, 400, $font-title);
-                            @include line-clamp($font-size: 20px, $line-height: 1.5, $lines-to-show: 2, $max-height: true);
-                            margin-bottom: 20px;
-                            text-transform: uppercase;
+                            // @include setFont(20px, #fff, 400, $font-title);
+                            // @include line-clamp($font-size: 20px, $line-height: 1.5, $lines-to-show: 2, $max-height: true);
+                            // margin-bottom: 20px;
+                            // text-transform: uppercase;
                            // @include text-shadow(2px,2px,2px,rgba(0,0,0,.25));
                         }
                         &__button{
                             &.slider-button{
-                                @include grid(flex, $justify-content: center);
+                                // @include grid(flex, $justify-content: center);
                                 a{
                                     // @include setFont(22px, #fff, 400, 'SFUDinEngAlt');
                                     // @include grid(inline-flex, $flex-wrap: wrap, $justify-content: space-between, 

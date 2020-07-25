@@ -2,20 +2,183 @@
 // This file contains styles that are specific to the home page.
 // -----------------------------------------------------------------------------
 .main-title{
+  @include grid(flex, $flex-wrap: wrap, $justify-content: space-between, 
+    $align-items: flex-end, $gutter: null);
+  border-bottom: 2px solid $theme-color;
+  position: relative;
+  margin-bottom: 20px;
+  padding-bottom: 7px;
   &__name{
-    @include bg("idx-tit.jpg",$background-repeat: repeat,$background-size: null,$background-position: 0 0);
-    @include setFont(18px, #000, 900, $font-text);
+    @include setFont(24px, $theme-color, 900, $font-text);
     text-transform: uppercase;
-    margin-bottom: 14px;
+    margin: 0;
     a,span{
-      @include grid(inline-flex, $flex-wrap: wrap, $justify-content: null, 
-        $align-items: center, $gutter: null);
-      min-height: 46px;
-      background-color: #e7090c;
-      color: #fff;
-      padding: 0 15px;
+      color: $theme-color;
     }
   }
-  @include media("<=mobile"){
+  .main-subtitle{
+    @extend %reset-list;
+    @include flex(1);
+    @include grid(flex, $flex-wrap: wrap, $justify-content: flex-end, 
+      $align-items: center, $gutter: null);
+    &-item{
+      @include setFont(14px, #000, 400, $font-text);
+      position: relative;
+      &__url{
+        color: #666;
+      }
+
+      @include doubly(){
+        margin-left: 24px;
+        @include p-el(before, $el-width: 1px, $el-height: 10px){
+          background-color: #666;
+          left: -12px;
+          top: 5px;
+          transform: skewX(-20deg);
+        }
+      }
+    }
+  }
+  @include p-el(after, $el-width: 100%, $el-height: 1px){
+    bottom: -4px;
+    background-color: $theme-color;
+  }
+}
+.tinmoi-container{
+  max-height: 440px;
+  overflow:hidden;
+  background:#fff;
+  position:relative;
+}
+.tinmoi-container >ul{
+  @extend %reset-list;
+  top: 0;
+  position:relative;
+  box-sizing:border-box;
+  animation:slider 9s linear infinite;
+
+}
+.tinmoi-container >ul:hover{
+  animation-play-state:paused;
+}
+.tinmoi-item{
+  &__url{
+    display: block;
+    color: #333;
+  }
+  &__figure{
+    padding-top: percentage(161/254);
+    position: relative;
+    margin-bottom: 0;
+    &-img{
+      @extend %img-fill;
+
+    }
+  }
+  &__name{
+    @include setFont(14px, #333, 700, $font-text);
+    text-align: center;
+    line-height: 1.5;
+  }
+}
+@include keyframes(slider) {
+  0%{top:0em}
+  100%{top:-10em}
+}
+.tim-bds{
+  background-color: $theme-color;
+  padding: 20px 0;
+  .form-group{
+    margin-bottom: 0;
+  }
+  .form-control{
+    @include flex(1);
+    height: 32px;
+    border-radius: 0;
+    margin-right: 20px;
+  }
+  .btn{
+    @include flex(1);
+    @include setFont(14px, #fff, 700, $font-text);
+    background-color: #fccc2a;
+    border-color: #fccc2a;
+    height: 32px;
+    text-transform: capitalize;
+    border-radius: 0;
+    i{
+      margin-right: 5px;
+    }
+  }
+}
+.videoduan{
+  background-size: cover;
+  padding: 45px 0 150px;
+  &__title{
+    @include setFont(30px, #fff, 900, $font-text);
+    margin-bottom: 30px;
+    span{
+      display: inline-block;
+      border-bottom: 2px solid #fff;
+      padding: 0 20px;
+      position: relative;
+      @include p-el(after, $el-width: 100%, $el-height: 1px){
+        background-color: #fff;
+        bottom: -5px;
+        left: 0;
+      }
+    }
+  }
+}
+.video-main{
+  margin: 0 auto;
+  max-width: 1000px;
+}
+.video-item{
+  $this: &;
+  &.slick-slide{
+  @include grid(flex,  
+    $align-items: center);
+  }
+  height: 339px;
+  &__url{
+    display: block;
+    background-color: #fff;
+    padding: 4px;
+  }
+  &__figure{
+    margin-bottom: 0;
+  }
+  &__img{
+  }
+  &.slick-center{
+    #{$this}__url{
+      transform: scale(1.8);
+    }
+  }
+}
+.newsletter{
+  @include absolute($left: 0px, $top: -54px);
+  width: 100%;
+  .d-flex{
+    background-color: #c54c04;
+    padding: 0 35px;
+    min-height: 100px;
+  }
+  &__head{
+    @include grid(inline-flex, $align-items: flex-start);
+    &-img{}
+    &-title{
+      @include setFont(24px, #fff, 900, $font-text);
+      @include flex(1);
+      margin-left: 27px;
+      text-transform: uppercase;
+      position: relative;
+      border-bottom: 2px solid #fff;
+      @include p-el(after, $el-width: 100%, $el-height: 1px){
+        background-color: #fff;
+        left: 0;
+        bottom: -5px;
+      }
+    }
   }
 }

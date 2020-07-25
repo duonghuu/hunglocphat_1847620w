@@ -28,14 +28,23 @@
                     <?php //phanquyen_menu('Quản lý mã giảm giá','news','man','coupon'); ?>
                 </ul>
             </li>
-
-            <li class="categories_li <?php if(in_array($_GET['type'], array('ky-gui','tuyen-dung','link-san-pham',
+            <li class="categories_li <?php if(in_array($_GET['type'], array('du-an'))) 
+            echo ' activemenu' ?>" id="menu_ttda"><a href="" title="" class="exp"><span>
+            Dự án</span><strong></strong></a>
+            <ul class="sub">
+                <?php phanquyen_menu('Danh mục cấp 1','news','man_danhmuc','du-an'); ?>
+                <?php phanquyen_menu('Dự án','news','man','du-an'); ?>
+                <?php //phanquyen_menu('Lấy tin từ Vnexpress','vnexpress','man',''); ?>
+            </ul>
+        </li>
+            <li class="categories_li <?php if(in_array($_GET['type'], array('ky-gui','tuyen-dung','ho-tro',
             'y-kien','dich-vu','txtdich-vu','tin-tuc','txttin-tuc','chinh-sach')) 
             or $_GET['com']=='vnexpress') 
             echo ' activemenu' ?>" id="menu_tt"><a href="" title="" class="exp"><span>
             Bài viết</span><strong></strong></a>
             <ul class="sub">
                 <?php phanquyen_menu('Ký gửi','news','man','ky-gui'); ?>
+                <?php phanquyen_menu('Hỗ trợ pháp lý','news','man','ho-tro'); ?>
                 <?php phanquyen_menu('Tuyển dụng','news','man','tuyen-dung'); ?>
                 <?php phanquyen_menu('Danh mục sản phẩm','news','man','link-san-pham'); ?>
                 <?php phanquyen_menu('Tin tức','news','man','tin-tuc'); ?>
@@ -143,7 +152,7 @@ $_GET['com']=='user') echo ' activemenu' ?>" id="menu_cp"><a href="" title="" cl
         <?php //phanquyen_menu('Quản lý hotline','news','man','hotline'); ?>
         <?php //phanquyen_menu('Quản lý zalo','news','man','zalo'); ?>
         <?php //phanquyen_menu('Quản lý chi nhánh','news','man','diachi'); ?>
-        <?php //phanquyen_menu('Quản lý video','video','man','video'); ?>
+        <?php phanquyen_menu('Quản lý video','video','man','video'); ?>
         <?php phanquyen_menu('Tag seo','news','man','tags'); ?>
         <li <?php if($_GET['act']=='admin_edit') echo ' class="this"' ?> >
             <a href="index.php?com=user&act=admin_edit">Quản lý Tài Khoản</a></li>
