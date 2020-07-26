@@ -27,8 +27,8 @@ if(!empty($page))
     $paging->class_txt_goto = "txt_go_button";
     $paging->per_page = 6;
     $paging->page = $_POST["page"];
-    $paging->text_sql = "select id,ten$lang as ten,thumb,photo,tenkhongdau,diachi,mattien,vitri,type,id_city,id_dist from
-    table_product where hienthi=1 and noibat>0 ";
+    $paging->text_sql = "select id,ten$lang as ten,thumb,photo,tenkhongdau,diachi,mattien,vitri,type,id_city,id_dist
+  ,dientich from table_product where hienthi=1 and noibat>0 ";
     if($id_danhmuc>0){
         $paging->text_sql .= " and id_danhmuc='".$id_danhmuc."' ";    
     }

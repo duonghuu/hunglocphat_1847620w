@@ -112,7 +112,7 @@
 }
 .videoduan{
   background-size: cover;
-  padding: 45px 0 150px;
+  padding: 30px 0 90px;
   &__title{
     @include setFont(30px, #fff, 900, $font-text);
     margin-bottom: 30px;
@@ -147,22 +147,31 @@
   }
   &__figure{
     margin-bottom: 0;
+    position: relative;
+    @include p-el(before, $el-width: 75px, $el-height: 76px){
+      @include bg("play.png",$background-repeat: no-repeat,$background-size: cover,$background-position: 0 0);
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-50%,);
+    }
   }
   &__img{
   }
   &.slick-center{
+    position: relative;
+    z-index: 10;
     #{$this}__url{
       transform: scale(1.8);
     }
   }
 }
 .newsletter{
-  @include absolute($left: 0px, $top: -54px);
+  @include absolute($left: 0px, $top: -50px);
   width: 100%;
   .d-flex{
     background-color: #c54c04;
     padding: 0 35px;
-    min-height: 100px;
+    height: 100px;
   }
   &__head{
     @include grid(inline-flex, $align-items: flex-start);

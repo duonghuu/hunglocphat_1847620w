@@ -331,37 +331,60 @@ div.slider {
         }
     }
     .hotro{
-        @include bg("hotro.jpg",$background-repeat: no-repeat,$background-size: null,$background-position: center 0);
-        padding-top: 117px;
+        @include bg("hotro-bg.png",$background-repeat: no-repeat,$background-size: null,$background-position: center bottom);
         &__hotline{
-            @include grid(flex, $flex-wrap: null, $justify-content: null, 
-              $align-items: flex-start, $gutter: null);
-            padding-left: 6px;
+            @include bg("hotro.jpg",$background-repeat: no-repeat,$background-size: null,$background-position: center bottom);
+            @include grid(flex, $flex-wrap: wrap, $justify-content: center, 
+              $align-items: flex-start, $flex-direction: column);
+            min-height: 162px;
+            padding: 60px 10px 10px 30px;
             &-img{
-                margin-right: 8px;
             }
             &-info{}
             &-text{
-                @include setFont(14px, #fff, 400, 'Arial');
-                margin-bottom: 0;
-                line-height: 1;
             }
             &-dienthoai{
-                @include setFont(26px, #ff0300, 400, $font-UTMHelvetIns);
+                @include setFont(30px, #e2000d, 900, $font-text);
                 @include text-shadow(2px,2px,0px,#fff, 5px 5px 5px rgba(0,0,0,.48));
-                margin-bottom: 0;
+                display: block;
+                width: 100%;
+                margin-top: 0;
                 line-height: 1;
             }
         }
         
         &-list{
-            padding: 5px 16px;
         }
         &-item{
-            padding: 10px 0;
+            padding: 20px 0;
             &__line{
                 @include grid(flex, $flex-wrap: nowrap, $justify-content: null, 
                   $align-items: center, $gutter: null);
+            }
+            
+            &__info{
+                @include flex(1);
+                margin-left: 10px;
+            }
+            &__image{
+                @include box(68px,68px,100%);
+                overflow: hidden;
+                position: relative;
+                @include p-el(before, $el-width: null, $el-height: null){
+                    @include box(62px,62px,100%);
+                    border: 1px solid #fff; 
+                    z-index: 2;
+                        left: 3px;
+                        top: 3px;
+                }
+            }
+            &__figure{
+                margin-bottom: 0;
+                position: relative;
+                padding-top: 100%;
+                &-img{
+                    @extend %img-fill;
+                }
             }
             &__email{
                 @include setFont(14px, #000, 700, $font-text);
@@ -369,19 +392,17 @@ div.slider {
 
             }
             &__zalo{
-                @include box(34px,32px);
-                @include bg("zalo.png",$background-repeat: no-repeat,$background-size: null,$background-position: 0 0);
+                display: inline-block;
+                margin-right: 10px;
             }
             &__ten{
-                @include setFont(em(13), #333, 400, $font-text);
+                @include setFont(em(14), #333, 700, $font-text);
+                margin-bottom: 10px;
             }
             &__dienthoai{
-                @include flex(1);
-                @include setFont(em(16), $theme-color, 900, $font-text);
-                margin: 0 7px;
             }
             @include doubly(){
-                border-top: 1px dotted #ccc;
+                border-top: 1px solid #fff;
             }
         }
     }

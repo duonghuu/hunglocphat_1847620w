@@ -21,7 +21,48 @@
 </div>
 <div class="widget">
   <div class="widget__title"><?= _hotrotructuyen ?></div>
-  <div class="widget__box">
+  <div class="widget__box hotro">
+      <div class="hotro__hotline">
+        <img src="images/i-hotline.png" alt="hotline" class="hotro__hotline-img">
+        <a href="tel:<?=preg_replace('/[^0-9]/','',$company['dienthoai']);?>" 
+          class="hotro__hotline-dienthoai"><?= $company['dienthoai'] ?></a>
+      </div>
+      <div class="hotro-list">
+        <?php foreach($yahoo as $k=>$v) { 
+$img = _upload_khac_l.$v["photo"];
+          ?>
+        <div class="hotro-item">
+          <div class="hotro-item__line">
+            <div class="hotro-item__image">
+              <figure class="hotro-item__figure">
+                <img src="<?= $img ?>" alt="<?= $v['ten'] ?>" class="hotro-item__figure-img">
+              </figure>
+            </div>
+            <div class="hotro-item__info">
+              <div class="hotro-item__ten"><?= $v['ten'] ?>
+              </div>
+              <div class="d-flex">
+                <a href="//zalo.me/<?=preg_replace('/[^0-9]/','',$v['yahoo']);?>" 
+                  class="hotro-item__zalo">
+                    <img src="images/i-zalo.png" alt="zalo">
+                  </a>
+                  <a href="tel:<?=preg_replace('/[^0-9]/','',$v['dienthoai']);?>" 
+                    class="hotro-item__zalo">
+                      <img src="images/i-dienthoai.png" alt="dienthoai">
+                    </a>
+                    <a href="//m.me/<?=preg_replace('/[^0-9]/','',$v['email']);?>" 
+                      class="hotro-item__zalo">
+                        <img src="images/i-mess.png" alt="mess">
+                      </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        
+
+        <?php } ?>
+      </div>
   </div>
 </div>
 <div class="widget">

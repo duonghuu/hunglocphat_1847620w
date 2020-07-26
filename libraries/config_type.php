@@ -57,10 +57,10 @@ switch($type){
 			"mota2"=>"Mô tả",'mattien'=>"Phòng ngủ","dientich"=>"Diện tích","thuonghieu"=>"Thương hiệu",
 			"vitri"=>"Giá bằng chữ");
 		@define ( _width_thumb , 500 );
-		@define ( _height_thumb , 400 );
+		@define ( _height_thumb , 320 );
 		@define ( _style_thumb , 2 );
 		@define ( _width_thumb2 , 500 );
-		@define ( _height_thumb2 , 400 );
+		@define ( _height_thumb2 , 320 );
 		break;
 	}
 	break;
@@ -144,6 +144,18 @@ switch($type){
 		@define ( _height_thumb2 , 480 );
 		@define ( _width_thumb4 , 145 );
 		@define ( _height_thumb4 , 110 );
+		break;
+	}
+	break;
+	case 'yahoo':
+	switch($act){
+		default:
+		$config['type'] = array('hinhanh');
+		@define ( _width_thumb , 70 );
+		@define ( _height_thumb , 70 );
+		@define ( _style_thumb , 1 );
+		@define ( _width_thumb2 , 70 );
+		@define ( _height_thumb2 , 70 );
 		break;
 	}
 	break;

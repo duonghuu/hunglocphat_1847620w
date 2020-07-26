@@ -7,7 +7,7 @@
         $img = "//i.ytimg.com/vi/".$iden."/mqdefault.jpg";
         ?>
         <div class="video-item">
-          <a href="" class="video-item__url">
+          <a data-fancybox="" href="//www.youtube.com/watch?v=<?= $iden ?>" class="video-item__url">
             <div class="video-item__image">
               <figure class="video-item__figure"><img src="<?= $img ?>" alt="" class="video-item__img"></figure>
             </div>

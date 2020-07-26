@@ -11,7 +11,7 @@
 }
 
 .product-grid {
-  // @include grid($display: flex, $flex-wrap:wrap, $gutter:$product-gutter);
+  @include grid($display: flex, $flex-wrap:wrap, $gutter:$product-gutter);
 }
 .slick-box-item {
   padding: 0 10px;
@@ -22,24 +22,18 @@
 .spnoibat-odd .pr-box article .info h3 a{color: #fff;}
 .spnoibat-odd .pr-box article:hover .info h3 a{color: $theme-color;}
 .pr-box {
-  // @include grid-col($col: 6, $grid-columns:30, $gutter:$product-gutter);
+  @include grid-col($col: 3, $grid-columns:12, $gutter:$product-gutter);
   @include transition(all 0.2s linear);
   position: relative;
   margin-bottom: 5px;
   article {
     @include transition(color 0.2s ease); 
-    @include boxShadow(0 0 5px rgba(239,240,248,.75));
-    @include grid(flex, $flex-wrap: wrap, $justify-content: space-between, 
-      $align-items: flex-start, $gutter: null);
     position: relative;
     margin: 0 auto;
-    color: #9e723e;
+    color: #333;
     overflow: hidden;
-    padding: 10px;
-    background-color: #fff;
 
     .image {
-      width: percentage(183/466);
     }
     .imgsp {
       display: block;
@@ -48,8 +42,8 @@
       padding-top: $product-ratio;
       img {
         @extend %img-fill;
-        object-fit: cover;
-        object-position: top center;
+        object-fit: contain;
+        object-position: center center;
       }
       .giam{
         // @include grid(inline-flex, $flex-wrap: wrap, $justify-content: center, 
@@ -62,13 +56,12 @@
       }
     }
     .info {
-      width: percentage(273/466);
       z-index: 2;
       overflow: hidden;
       h3 {
-        @include setFont(15px, inherit, 700, $font-text);
-        @include line-clamp($font-size: 15px, $line-height: 1.3, $lines-to-show: 2, $max-height: false);
-        margin-bottom: 5px;
+        @include setFont(14px, inherit, 700, $font-text);
+        @include line-clamp($font-size: 14px, $line-height: 1.5, $lines-to-show: 2, $max-height: false);
+        margin: 5px 0;
         position: relative;
         z-index: 6;
         a {
@@ -80,19 +73,18 @@
       p {
         @include grid(flex, $flex-wrap: wrap, $justify-content: null, 
           $align-items: center, $gutter: null);
-        @include setFont(13px, #333, 400, $font-text);
-        margin-bottom: 8px;
+        @include setFont(14px, #666, 700, $font-text);
+        margin-bottom: 4px;
         i {
-          @include setFont(9px, #fff, 700, $font-awesome);
-          @include box(16px,16px);
-          @include grid(inline-flex, $flex-wrap: wrap, $justify-content: center, 
-            $align-items: center, $gutter: null);
-          background-color: #cdcfd0;
+          width: 20px;
+          color: #333;
         }
         strong {
-          margin: 0 5px;
+          font-weight: normal;
+          margin-right: 5px;
         }
         span {
+          color: #333;
         }
         del{
           color: #666;
@@ -103,22 +95,22 @@
 
     }
     .muangay{
-      @include setFont(13px, #333, 400, $font-text);
-      @include transition(all 0.2s ease);
-      background-color: #ececec;
-      display: block;
-      text-transform: uppercase;
-      text-align: center;
-      line-height: 30px;
-      border: 1px solid #cacaca;
-      &:hover{
-          border-color: $theme2-color;
-          background-color: $theme2-color;
-          color: #fff;
-      }
+      // @include setFont(13px, #333, 400, $font-text);
+      // @include transition(all 0.2s ease);
+      // background-color: #ececec;
+      // display: block;
+      // text-transform: uppercase;
+      // text-align: center;
+      // line-height: 30px;
+      // border: 1px solid #cacaca;
+      // &:hover{
+      //     border-color: $theme2-color;
+      //     background-color: $theme2-color;
+      //     color: #fff;
+      // }
     }
     &:hover {
-      color: #333;
+      color: $theme-color;
       
     }
     
@@ -126,6 +118,9 @@
   @include when-inside('.slick-box-item') {
     margin: 0;
     width: 100%;
+  }
+  @include when-inside('.sanpham-noibat') {
+    @include grid-col($col: 4, $grid-columns:12, $gutter:$product-gutter);
   }
 }
 

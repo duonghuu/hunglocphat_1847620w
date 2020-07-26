@@ -3,7 +3,8 @@
   $product_list = get_result("select id,ten$lang as ten,tenkhongdau,type from #_product_list
    where id_danhmuc='".$vdm["id"]."' and hienthi>0 order by stt");
   $iden = 'sp'.md5($vdm["tenkhongdau"].$vdm["id"]);
-  $product = get_result("select id,ten$lang as ten,thumb,photo,tenkhongdau,diachi,mattien,vitri,type,id_city,id_dist from #_product
+  $product = get_result("select id,ten$lang as ten,thumb,photo,tenkhongdau,diachi,mattien,vitri,type,id_city,id_dist
+  ,dientich from #_product
    where type='nha-dat' and id_danhmuc='".$vdm["id"]."' and noibat>0 and hienthi>0 order by stt");
   ?>
 <div class="sanpham-noibat">

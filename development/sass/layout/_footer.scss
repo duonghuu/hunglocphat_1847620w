@@ -7,7 +7,7 @@
     height: $map-height;
 }
 %copyright-font {
-    @include setFont(12px, #fff, 400);
+    @include setFont(14px, #666, 500);
 }
 %ft-thongke-css{
     @include grid(flex, $flex-wrap: wrap, $justify-content: flex-end, 
@@ -33,65 +33,90 @@
     }
 }
 #footer {
-    background-size: cover;
+    $bg-pos-right: percentage(94/1366);
+    @include bg("ft-bg.png",$background-repeat: no-repeat,$background-size: null,$background-position: bottom right $bg-pos-right);
     background-color: $footer-bg;
     position: relative;
     width: 100%;
     z-index: 5;
     
     .ft-top{
-        padding: 50px 0; 
+        padding-top: 50px;
+        position: relative;
+        @include p-el(after, $el-width: 45%, $el-height: 1px){
+           @include background-opacity(#fff,0.4);
+           left: 0;
+           bottom: 0;
+         }
     }
     .ft-flex {
         @include grid(flex, $flex-wrap: wrap, $justify-content: space-between, 
           $align-items: null, $gutter: null);
+        .ft-brand {
+            width: percentage(450/$max-width);
+            padding: 35px 0;
+            margin-right: 55px;
+            &__logo{
+                display: block;
+                margin-bottom: 12px;
+                text-align: center;
+                background-color: #fff;
+                &-img{
+                    max-height: 80px;
+                }
+            }
+            &__name{
+                @include setFont(20px, #fff, 400, $font-text);
+                text-transform: uppercase;
+            }
+        }
         .ft-info {
-           width: percentage(400/$max-width);
+            @include grid(flex, $flex-wrap: wrap, $justify-content: space-between, 
+              $align-items: null, $gutter: null);
+           @include flex(1);
+           border-left: 1px solid #ffffff66;
+           padding: 35px;
            color: #fff;
            .content{
                p{
                 margin-bottom: 7px;
                }
            }
-        }
-        .ft-fanpage {
-            width: percentage(330/$max-width);
-            .fanpageplace {
-                height: 210px;
-                overflow: hidden;
+           &-item{
+            @include grid(flex, $flex-wrap: wrap, $justify-content: null, 
+              $align-items: center, $gutter: null);
+            width: 49%;
+            i{
+                font-size: 28px;
+                width: 50px;
             }
-        }
-
-        .ft-baiviet {
-            width: percentage(230/$max-width);
-            ul {
-                @extend %reset-list;
-                li {
-                    @include setFont(15px, #fff, 400, $font-text);
-                    a {
-                        @include grid($display: flex, $align-items: center);
-                        @include transition(all 0.2s ease);
-                        position: relative;
-                        color: inherit;
-                        padding: 10px 0;
-                        line-height: 1.5;
-                        @include p-el(before, $el-width: null, $el-height: null){
-                          // @include setFont(7px, #000, 700, $font-awesome);
-                          // left: 0;
-                          // content: "\f009";
-                        }
-                    }
-                    &:hover{
-                        color: $theme-color; 
-                    }
-                    @include doubly(){
-                        border-top: 1px solid rgba(255,255,255,0.2);
+            &__text{
+                @include flex(1);
+                p{
+                    @include setFont(14px, #fff, 400, $font-text);
+                    margin-bottom: 2px;
+                    &:first-child(){
+                        font-weight: 700;
                     }
                 }
             }
+           }
         }
-    }
+        .ft-fanpage {
+            // width: percentage(330/$max-width);
+            // .fanpageplace {
+            //     height: 210px;
+            //     overflow: hidden;
+            // }
+        }
 
+        
+    }
+    .ft-bot-flex {
+        @include grid(flex, $flex-wrap: wrap, $justify-content: null, 
+          $align-items: null, $gutter: null);
+        padding: 35px 0;
+    }
     .ft-company {
         // @include setFont(em(31), #fff, 700);
         // text-transform: uppercase;
@@ -103,15 +128,46 @@
     }
 
     .ft-tit {
-        @include setFont(18px, $theme-color, 900, $font-text);
+        @include setFont(16px, #fff, 700, $font-text);
         position: relative;
-        text-transform: uppercase;
+        text-transform: capitalize;
         margin-bottom: 15px;
         strong, span {
             display: block;
         }
+        i{
+            margin-right: 7px;
+        }
     }
-
+    .ft-baiviet {
+        width: percentage(200/$max-width);
+        ul {
+            @extend %reset-list;
+            li {
+                @include setFont(14px, #fff, 400, $font-text);
+                margin-bottom: 5px;
+                a {
+                    @include grid($display: flex, $align-items: center);
+                    @include transition(all 0.2s ease);
+                    position: relative;
+                    color: inherit;
+                    padding-left: 10px;
+                    line-height: 1.5;
+                    @include p-el(before, $el-width: 3px, $el-height: 3px){
+                      // @include setFont(7px, #000, 700, $font-awesome);
+                      left: 0;
+                      // content: "\f009";
+                      background-color: #fff;
+                    }
+                }
+                &:hover{
+                    color: #f00; 
+                }
+                @include doubly(){
+                }
+            }
+        }
+    }
 }
 .copyright {
     background-color: $copyright-bg;

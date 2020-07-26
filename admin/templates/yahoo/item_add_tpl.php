@@ -20,6 +20,24 @@
     <div class="title"><img src="./images/icons/dark/list.png" alt="" class="titleIcon" />
      <h6>Nhập dữ liệu</h6>
    </div> 
+     <div class="formRow">
+      <label>Tải hình ảnh:</label>
+      <div class="formRight">
+       <input type="file" id="file" name="file" accept="image/*" onchange="loadFile(event)" />
+       <img src="./images/question-button.png" alt="Upload hình" class="icon_question tipS" original-title="Tải hình ảnh (ảnh JPEG, GIF , JPG , PNG)">
+       <div class="note">Width:<?=_width_thumb2?>px | Height:<?=_height_thumb2?>px <?=_format_duoihinh_l?> </div>
+     </div>
+     <div class="clear"></div>
+   </div>
+   <?php if($_GET['act']=='edit'){?>
+     <div class="formRow">
+      <label>Hình Hiện Tại :</label>
+      <div class="formRight">
+        <div class="mt10"><img id="output" src="<?=_upload_khac.$item['photo']?>"  style="max-width:100px" alt="NO PHOTO" /></div>
+      </div>
+      <div class="clear"></div>
+    </div>
+   <?php } ?>
    <ul class="tabs">
      <li>
        <a href="#info">Thông tin chung</a>
@@ -41,7 +59,7 @@
      <div class="clear"></div>
    </div>
    <div class="formRow ">
-    <label>Bộ phận</label>
+    <label>Messenger</label>
     <div class="formRight">
      <input type="text" name="email" title="Nhập nội dung" id="email" 
      class="tipS validate[required]" value="<?=@$item['email']?>" />
