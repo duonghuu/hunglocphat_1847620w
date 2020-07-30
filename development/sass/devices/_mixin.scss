@@ -1,37 +1,44 @@
-@mixin setTintucnoibat{
-  .tintuc-noibat{
-    &__title{
-      &-url{
-      }
+@mixin setNewsletter{
+  .newsletter{
+    @include relative($left: 0px, $top: 0px);
+    .d-flex{
+      @include flex-wrap(wrap);
+      height: auto;
+      padding: 1em 10px;
     }
-    &-list{
-    }
-    &-item{
-      @include grid-col($col: 12, $grid-columns:12, $gutter:1%);
-      &__url{
-      }
-      &__image{
-      }
-      &__figure{
-      }
-      &__img{
-      }
-      &__info{
-      }
-      &__name{
-      }
-      &__post{
-        i{
-        }
-      }
-      &__desc{
+    &__head{
+      width: 100%;
+      margin-bottom: 1em;
+      &-img{}
+      &-title{
       }
     }
   }
+
+  div#dknt {
+      @include flex(unset);
+      margin-left: 0;
+      width: 100%;
+  }
+  form#frm_dknt {
+      input[type='text'] {
+        @include flex(unset);
+        width: 49%;
+        margin: 0 0 10px 0;
+
+      }
+      #submit_nhantin {
+        @include flex(unset);
+                width: 49%;
+                margin-bottom: 10px;
+          i{
+          }
+      }
+  }
+
 }
 @mixin setTimbds{
   .tim-bds{
-    margin-top: 50px;
     .form-group{
       .form-control{
       }
@@ -146,45 +153,40 @@
 /*========= SLIDER ===============*/
 @mixin setSlider(){
   #slideshow {
-    .box-menu-slider{
-      display: none;
-    }
       .slideshow-slider-main{
-        width: 100%;
-        margin: 10px 0;
           .slideshow-slider-item {
               & > section {
                   .slider-link{
                   }
                   .slider-text-bg{
-                    @include justify-content(center);
+                    // @include justify-content(center);
                       .slider-text{
-                        margin-right: 0;
-                          &__ten{
-                            @include line-clamp($font-size: 20px, $line-height: 1.1, $lines-to-show: 1, $max-height: false);
-                            text-align: center;
-                            margin-bottom: 10px;
-                          }
-                          &__mota{
-                            @include line-clamp($font-size: 15px, $line-height: 1.5, $lines-to-show: 2, $max-height: true);
-                            @include media("<=mobile"){
-                              @include line-clamp($font-size: 13px, $line-height: 1.5, $lines-to-show: 2, $max-height: true);  
-                            }
-                            margin-bottom: 10px;
-                            text-align: center;
-                          }
-                          &__button{
-                              &.slider-button{
-                                  a{
-                                    font-size: 13px;
-                                    height: 30px;
-                                  }
-                                  .slider-button__xemthem{
+                        // margin-right: 0;
+                        //   &__ten{
+                        //     @include line-clamp($font-size: 20px, $line-height: 1.1, $lines-to-show: 1, $max-height: false);
+                        //     text-align: center;
+                        //     margin-bottom: 10px;
+                        //   }
+                        //   &__mota{
+                        //     @include line-clamp($font-size: 15px, $line-height: 1.5, $lines-to-show: 2, $max-height: true);
+                        //     @include media("<=mobile"){
+                        //       @include line-clamp($font-size: 13px, $line-height: 1.5, $lines-to-show: 2, $max-height: true);  
+                        //     }
+                        //     margin-bottom: 10px;
+                        //     text-align: center;
+                        //   }
+                        //   &__button{
+                        //       &.slider-button{
+                        //           a{
+                        //             font-size: 13px;
+                        //             height: 30px;
+                        //           }
+                        //           .slider-button__xemthem{
                                       
-                                  }
-                              }
+                        //           }
+                        //       }
                               
-                          }
+                        //   }
                       }
                   }
               }
@@ -199,38 +201,19 @@
     overflow: hidden;
   }
   .header{
-    &__wrap{
-      @include justify-content(center);
+    &-top{
+      display: none;
     }
-    &__logo{
-      
-      &-img{
+    &-bot{
+      .container{
+        min-height: auto;
       }
-    }
-    &__info{
-      margin-left: 1em;
-      @include media("<=mobile"){
-        &-text{
-            @include font-size(13);
-            font-weight: 400;
-          &--big{
-            @include font-size(18);
-          }
+      &__logo{
+        max-width: 100%;
+        width: 100%;
+        &-img{
+
         }
-      }
-      &-url{
-      }
-      &-right{
-        display: none;
-      }
-    }
-    &__email{
-      &-img{
-      }
-    }
-    &__hotline{
-      &-img{}
-      &-number{
       }
     }
   }
@@ -261,15 +244,8 @@
     @include grid($display: flex, $flex-wrap:wrap, $gutter:$product-gutter);
   }
   .pr-box{
-    @include grid-col($col: $p_col, $grid-columns: 30, $col-offset: null, $gutter: $p_gutter);  
+    @include grid-col($col: $p_col, $grid-columns: 12, $col-offset: null, $gutter: $p_gutter);  
     @include media("<=mobile"){
-    }
-  }
-  .sanpham-danhmuc{
-    &-grid{
-      .pr-box:first-child{
-        @include grid-col($col: $p_col, $grid-columns: 30, $col-offset: null, $gutter: $p_gutter);  
-      }
     }
   }
   @content;
@@ -320,27 +296,61 @@
 }
 /*========= FOOTER ===============*/
 @mixin setFooter(){
-  #footer{
-    .ft-flex {
-      .ft-info,.ft-baiviet,.ft-fanpage{
-        margin-bottom: 1em;
-        width: 45%;
+  #footer {
+      $bg-pos-right: percentage(94/1366);
+      .ft-top{
+        padding-top: 20px;
+        &:after{
+          display: none;
+        }
       }
-      .ft-info{
-        width: 100%;
+      .ft-flex {
+          .ft-brand {
+            width: 100%;
+            margin-right: 0;
+            padding: 0 ; 
+              &__logo{
+                  &-img{
+                  }
+              }
+              &__name{
+              }
+          }
+          .ft-info {
+            border-left: 0;
+            padding: 0; 
+             &-item{
+              i{
+              }
+              &__text{
+              }
+             }
+          }
+          
+      }
+      .ft-bot-flex {
+        @include justify-content(space-between);
+        padding: 7px 0;
+      }
+
+      .ft-baiviet {
+        width: 49%;
       }
       @include media("<=mobile"){
-        .ft-baiviet{
-            width: 100%;
-        }
-        .ft-fanpage{
-          width: 100%;
-          .fanpageplace{
-            height: auto;
-          }
+        .ft-flex {
+            .ft-brand {
+              &__name{
+                @include font-size(15);
+              }
+            }
+            .ft-info {
+               &-item{
+                width: 100%;
+                margin-bottom: 7px;
+               }
+             }
         }
       }
-    }
   }
 }
 @mixin setCopyright(){

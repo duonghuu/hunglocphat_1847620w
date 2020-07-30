@@ -5,7 +5,7 @@
     <div class="tinmoi-container">
       <ul>
         <?php foreach($duan as $k=>$v) { 
-        $link = get_url($v, $v["type"]);
+        $link = get_url($v, $v["type"],2);
         $imgurl='<img class="tinmoi-item__figure-img" src="'._upload_tintuc_l.$v["thumb"].'" alt="'.$v["ten"].'"  />';
           ?>
           <li class="tinmoi-item">

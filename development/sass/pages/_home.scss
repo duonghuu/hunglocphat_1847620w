@@ -16,6 +16,7 @@
       color: $theme-color;
     }
   }
+    
   .main-subtitle{
     @extend %reset-list;
     @include flex(1);
@@ -37,6 +38,16 @@
           transform: skewX(-20deg);
         }
       }
+    }
+  }
+  @include media("<=mobile"){
+    .main-subtitle{
+      @include flex(unset);
+      @include justify-content(flex-start);
+      width: 100%;
+    }
+    &__name{
+      width: 100%;
     }
   }
   @include p-el(after, $el-width: 100%, $el-height: 1px){
@@ -113,6 +124,9 @@
 .videoduan{
   background-size: cover;
   padding: 30px 0 90px;
+  @include media("<=medium"){
+    padding: 30px 0;
+  }
   &__title{
     @include setFont(30px, #fff, 900, $font-text);
     margin-bottom: 30px;
@@ -187,6 +201,21 @@
         background-color: #fff;
         left: 0;
         bottom: -5px;
+      }
+    }
+  }
+}
+
+.duan-detail{
+  .nav{
+    &-item{}
+    &-link{
+      @include setFont(13px, #333, 400, $font-text);
+      border-radius: 0;
+      padding: 5px;
+      &.active{
+        border-color: $theme-color;
+        background-color: $theme-color;
       }
     }
   }

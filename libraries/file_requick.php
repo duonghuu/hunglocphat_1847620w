@@ -69,14 +69,14 @@ switch($com)
 	$template = isset($_GET['id']) ? "news_detail" : "news";
 	$type_og = isset($_GET['id']) ? "article" : "object";
 	break;
-	case 'tuyen-dung':
-	$type = "tuyen-dung";
-	$title = _tuyendung;
-	$title_cat = _tuyendung;
+	case 'du-an':
+	$type = "du-an";
+	$title = _duan;
+	$title_cat = _duan;
 	$title_other = _tinlienquan;
 	$source = "news";
-	$template = isset($_GET['id']) ? "news_detail" : "news";
-	$type_og = isset($_GET['id']) ? "article" : "object";
+	$template = isset($_GET['id_list']) ? "duan_detail" : "duan";
+	$type_og = isset($_GET['id_list']) ? "article" : "object";
 	break;
 	case 'ky-gui':
 	$type = "ky-gui";

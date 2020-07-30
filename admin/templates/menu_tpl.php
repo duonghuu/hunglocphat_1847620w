@@ -19,7 +19,7 @@
                     <?php //phanquyen_menu('Danh mục cấp 3','product','man_cat','nha-dat'); ?>
                     <?php phanquyen_menu('Nhà đất','product','man','nha-dat'); ?>
                     <?php phanquyen_menu('Danh mục hướng nhà','news','man','id_huong'); ?>
-                    <?php phanquyen_menu('Danh mục giá','news','man','id_khoanggia'); ?>
+                    <?php phanquyen_menu('Danh mục diện tích','news','man','id_khoanggia'); ?>
                     <?php //phanquyen_menu('Text sản phẩm mới','about','capnhat','txtban-chay'); ?>
                     <?php //phanquyen_menu('Quản lý hình thức thanh toán','httt','man',''); ?>
                     <?php //phanquyen_menu('Quản lý thương hiệu','news','man','thuonghieu'); ?>
@@ -33,6 +33,7 @@
             Dự án</span><strong></strong></a>
             <ul class="sub">
                 <?php phanquyen_menu('Danh mục cấp 1','news','man_danhmuc','du-an'); ?>
+                <?php phanquyen_menu('Danh mục cấp 2','news','man_list','du-an'); ?>
                 <?php phanquyen_menu('Dự án','news','man','du-an'); ?>
                 <?php //phanquyen_menu('Lấy tin từ Vnexpress','vnexpress','man',''); ?>
             </ul>
@@ -45,29 +46,10 @@
             <ul class="sub">
                 <?php phanquyen_menu('Ký gửi','news','man','ky-gui'); ?>
                 <?php phanquyen_menu('Hỗ trợ pháp lý','news','man','ho-tro'); ?>
-                <?php phanquyen_menu('Tuyển dụng','news','man','tuyen-dung'); ?>
-                <?php phanquyen_menu('Danh mục sản phẩm','news','man','link-san-pham'); ?>
                 <?php phanquyen_menu('Tin tức','news','man','tin-tuc'); ?>
-                <?php phanquyen_menu('Dịch vụ','news','man','dich-vu'); ?>
                 <?php phanquyen_menu('Chính sách','news','man','chinh-sach'); ?>
                 
                 <?php //phanquyen_menu('Lấy tin từ Vnexpress','vnexpress','man',''); ?>
-            </ul>
-        </li>
-        <li class="categories_li <?php if(in_array($_GET['type'], array('tu-van'))) 
-            echo ' activemenu' ?>" id="menu_tttv"><a href="" title="" class="exp"><span>
-            Tư vấn thiết kế</span><strong></strong></a>
-            <ul class="sub">
-                <?php phanquyen_menu('Danh mục cấp','news','man_danhmuc','tu-van'); ?>
-                <?php phanquyen_menu('Tư vấn thiết kế','news','man','tu-van'); ?>
-            </ul>
-        </li>
-        <li class="categories_li <?php if(in_array($_GET['type'], array('xay-dung'))) 
-            echo ' activemenu' ?>" id="menu_ttxd"><a href="" title="" class="exp"><span>
-            Xây dựng sửa chữa</span><strong></strong></a>
-            <ul class="sub">
-                <?php phanquyen_menu('Danh mục cấp','news','man_danhmuc','xay-dung'); ?>
-                <?php phanquyen_menu('Xây dựng sửa chữa','news','man','xay-dung'); ?>
             </ul>
         </li>
 
@@ -75,7 +57,7 @@
         echo ' activemenu' ?>" id="menu_t"><a href="" title="" class="exp">
             <span>Trang tĩnh</span><strong></strong></a>
             <ul class="sub">
-                <?php //phanquyen_menu('Giới thiệu','about','capnhat','gioi-thieu'); ?>
+                <?php phanquyen_menu('Giới thiệu','about','capnhat','gioi-thieu'); ?>
                 <?php phanquyen_menu('Cập nhật liên hệ','about','capnhat','lienhe'); ?>
                 <?php //phanquyen_menu('Cập nhật footer','about','capnhat','footer'); ?>
             </ul>
@@ -107,8 +89,6 @@
     <?php //phanquyen_menu('Background liên hệ','background','capnhat','bgft'); ?>
     <?php //phanquyen_menu('Cập nhật banner mobile','background','capnhat','banner_mobi'); ?>
     <?php phanquyen_menu('Quản lý slider','slider','man_photo','slider'); ?>
-    <?php phanquyen_menu('Quảng cáo bên trái','slider','man_photo','quang-cao'); ?>
-    <?php phanquyen_menu('Quảng cáo bên phải','slider','man_photo','quang-cao2'); ?>
     <?php //phanquyen_menu('Banner trang trong','news','man','bntrong'); ?>
     <?php //phanquyen_menu('Text Đối tác','about','capnhat','txtdoitac'); ?>
     <?php //phanquyen_menu('Đối tác','slider','man_photo','doi-tac'); ?>
@@ -162,10 +142,9 @@ $_GET['com']=='user') echo ' activemenu' ?>" id="menu_cp"><a href="" title="" cl
     echo ' activemenu' ?>" id="menuseo"><a href="#" title="" class="exp"><span>Hổ Trợ SEO
     </span><strong></strong></a>
     <ul class="sub">
-        <?php phanquyen_menu('Tư vấn thiết kế','title','capnhat','tu-van'); ?>
-        <?php phanquyen_menu('Xây dựng sửa chữa','title','capnhat','xay-dung'); ?>
-        <?php phanquyen_menu('Ký gửi','title','capnhat','ky-gui'); ?>
-        <?php phanquyen_menu('Tuyển dụng','title','capnhat','tuyen-dung'); ?>
+        <?php phanquyen_menu('Tin tức','title','capnhat','tin-tuc'); ?>
+        <?php phanquyen_menu('Dự án','title','capnhat','du-an'); ?>
+        <?php phanquyen_menu('Nhà đất','title','capnhat','nha-dat'); ?>
     </ul>
 </li>
 </ul>

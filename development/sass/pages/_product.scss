@@ -22,7 +22,7 @@
 .spnoibat-odd .pr-box article .info h3 a{color: #fff;}
 .spnoibat-odd .pr-box article:hover .info h3 a{color: $theme-color;}
 .pr-box {
-  @include grid-col($col: 3, $grid-columns:12, $gutter:$product-gutter);
+  @include grid-col($col: 4, $grid-columns:12, $gutter:$product-gutter);
   @include transition(all 0.2s linear);
   position: relative;
   margin-bottom: 5px;
@@ -118,9 +118,6 @@
   @include when-inside('.slick-box-item') {
     margin: 0;
     width: 100%;
-  }
-  @include when-inside('.sanpham-noibat') {
-    @include grid-col($col: 4, $grid-columns:12, $gutter:$product-gutter);
   }
 }
 

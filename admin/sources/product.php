@@ -283,7 +283,7 @@ function save_item(){
     }
     $data['masp'] = $_POST['masp'];
     $data['gia'] = str_replace(',','',$_POST['gia']);
-    $data['dientich'] = $_POST['dientich'];
+    $data['dientich'] = (int)$_POST['dientich'];
     $data['tag'] = $_POST['tag'];
     $data['toado'] = $_POST['toado'];
     $data['mattien'] = $_POST['mattien'];

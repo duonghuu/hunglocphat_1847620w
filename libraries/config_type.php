@@ -54,7 +54,7 @@ switch($type){
 		$config['ck'] = array('mota2');
 		$config['title'] = array('tieubieu'=>"Nổi bật",'noibat'=>"Nổi bật",
 			'spmoi'=>"Khuyến mãi",'spbanchay'=>"Bán chạy","toado"=>"Iframe google map",
-			"mota2"=>"Mô tả",'mattien'=>"Phòng ngủ","dientich"=>"Diện tích","thuonghieu"=>"Thương hiệu",
+			"mota2"=>"Mô tả",'mattien'=>"Phòng ngủ","dientich"=>"Diện tích (m2)","thuonghieu"=>"Thương hiệu",
 			"vitri"=>"Giá bằng chữ");
 		@define ( _width_thumb , 500 );
 		@define ( _height_thumb , 320 );
@@ -228,13 +228,19 @@ switch($type){
 	break;
 	case 'du-an':
 	switch($act){
-		default:
-		$config['type'] = array('ten','mota','hinhanh','noidung','seo','noibat');
+		case 'danhmuc':
+		$config['type'] = array('seo','ten');
+		break;
+		case 'list':
+		$config['type'] = array('seo','ten','hinhanh','noibat','mota');
 		@define ( _width_thumb , 550 );
 		@define ( _height_thumb , 450 );
 		@define ( _style_thumb , 2 );
 		@define ( _width_thumb2 , 550);
 		@define ( _height_thumb2 , 450 );
+		break;
+		default:
+		$config['type'] = array('ten','danhmuc','list','noidung');
 		break;
 	}
 	break;

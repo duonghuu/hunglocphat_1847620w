@@ -2,6 +2,8 @@
 // This file contains all styles related to the header of the site/application.
 // -----------------------------------------------------------------------------
 .header{
+  position: relative;
+  z-index: 500;
   &-top{
     background-color: $header_top-bg;
     .container{

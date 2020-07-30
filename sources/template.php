@@ -6,7 +6,7 @@ if($source=="index"){
 }
   $video=get_result("select id,ten$lang as ten,tenkhongdau,link,thumb,photo
    from #_video where hienthi=1 and type='video' order by stt");
-$duan = get_result("select id,ten$lang as ten,mota$lang as mota,thumb,photo,tenkhongdau,ngaytao,type from #_news
+$duan = get_result("select id,ten$lang as ten,mota$lang as mota,thumb,photo,tenkhongdau,ngaytao,type from #_news_list
  where type='du-an' and noibat>0 and hienthi>0 order by stt");
 $kygui = get_result("select id,ten$lang as ten,mota$lang as mota,thumb,photo,tenkhongdau,ngaytao,type from #_news
  where type='ky-gui' and hienthi>0 order by stt");

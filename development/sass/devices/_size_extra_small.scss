@@ -2,6 +2,7 @@
 	and (min-width: $device_size_mobile)
 	and (max-width: $device_size_small) {
       @include setCommon;
+      @include setNewsletter;
       @include setTimbds;
       @include setLeftRightMobile;
       @include setSlider;

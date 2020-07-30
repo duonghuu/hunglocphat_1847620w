@@ -29,4 +29,5 @@ $where .= " order by stt asc";
 
 // $product = get_result("select *,ten$lang as ten,mota$lang as mota from #_product where $where limit $bg,$pageSize");
 // $url_link = getCurrentPageURL();
-$product = get_result("select id,ten$lang as ten,thumb,photo,tenkhongdau,diachi,mattien,vitri,type,id_city,id_dist from #_product where $where");
+$product = get_result("select id,ten$lang as ten,thumb,photo,tenkhongdau,diachi,
+  mattien,vitri,type,id_city,id_dist from #_product where $where");

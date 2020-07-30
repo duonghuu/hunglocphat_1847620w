@@ -127,21 +127,23 @@
             <div class="clear"></div>
         </div>
 
+        <?php /* 
         <div class="formRow">
-            <label>H2</label>
-            <div class="formRight">
-                <input type="text" value="<?=@$item['h2']?>" name="h2" title="" class="tipS" />
-            </div>
-            <div class="clear"></div>
-        </div>
-
-        <div class="formRow">
-            <label>H3</label>
-            <div class="formRight">
-                <input type="text" value="<?=@$item['h3']?>" name="h3" title="" class="tipS" />
-            </div>
-            <div class="clear"></div>
-        </div>
+                    <label>H2</label>
+                    <div class="formRight">
+                        <input type="text" value="<?=@$item['h2']?>" name="h2" title="" class="tipS" />
+                    </div>
+                    <div class="clear"></div>
+                </div>
+        
+                <div class="formRow">
+                    <label>H3</label>
+                    <div class="formRight">
+                        <input type="text" value="<?=@$item['h3']?>" name="h3" title="" class="tipS" />
+                    </div>
+                    <div class="clear"></div>
+                </div> 
+        */?>
 
 				
           <div class="formRow none">
@@ -204,7 +206,7 @@
                           <div class="clear"></div>
                       </div>
                   <?php }?>
-        <div class="formRow none">
+        <div class="formRow ">
             <label>Mô tả ngắn:</label>
             <div class="formRight">
                 <textarea rows="8" cols="" title="Viết mô tả ngắn bài viết" class="tipS" name="mota<?=$key?>" id="mota<?=$key?>"><?=@$item['mota'.$key]?></textarea>
