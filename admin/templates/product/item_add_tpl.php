@@ -370,7 +370,7 @@ $ds_photo=$d->result_array();
   <div class="formRow">
     <label><?= (!empty($config["title"]["toado"]))?$config["title"]["toado"]:"Tọa độ" ?>:</label>
     <div class="formRight">
-      <textarea rows="8" cols="" title="Tọa độ" class="tipS" name="data[toado]" id="toado"><?=@$item['toado']?></textarea>
+      <textarea rows="8" cols="" title="Tọa độ" class="tipS" name="toado" id="toado"><?=@$item['toado']?></textarea>
     </div>
     <div class="clear"></div>
   </div>

@@ -50,7 +50,7 @@ switch($type){
 
 		default:
 		$config['type'] = array('seo','ten','hinhanh','noidung','hinhthem',"noibat",'danhmuc','list'
-			,'gia','id_huong',"dientich",'mattien',"vitri");
+			,'gia','id_huong',"dientich",'mattien',"vitri","toado");
 		$config['ck'] = array('mota2');
 		$config['title'] = array('tieubieu'=>"Nổi bật",'noibat'=>"Nổi bật",
 			'spmoi'=>"Khuyến mãi",'spbanchay'=>"Bán chạy","toado"=>"Iframe google map",

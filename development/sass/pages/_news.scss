@@ -42,7 +42,7 @@
             padding: 10px;
             color: #333;
             .image{
-                width: 35%;
+                width: 15%;
                 figure{
                     position: relative;
                     margin-bottom: 0;
@@ -57,7 +57,7 @@
                 margin-left: 1em;
                 h5{
                     @include setFont(15px, inherit, 700, $font-text);
-                    @include line-clamp($font-size: 15px, $line-height: 1.5, $lines-to-show: 2, $max-height: false);
+                    // @include line-clamp($font-size: 15px, $line-height: 1.5, $lines-to-show: 2, $max-height: false);
                 }
                 .desc{
                    @include setFont(14px, inherit, 400, $font-text);
@@ -65,7 +65,12 @@
                 }
             }
             &:hover{
+                .info{
+                    h5{
                 color: #f00;
+                        
+                    }
+                }
             }
         }
     }

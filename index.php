@@ -58,9 +58,11 @@ include_once _source."counter.php";
                         <div class="right">
                             <?php include _template.$template."_tpl.php"; ?>
                         </div><!---END .right-->
+                        <?php if(!in_array($type, array("gioi-thieu","du-an"))) {  ?>
                         <div class="left">
                             <?php include _template."layout/left.php";?>
                         </div><!---END .left-->
+                    <?php } ?>
                     </div>
                 <?php }else{ ?>
                     <?php include _template.$template."_tpl.php"; ?>

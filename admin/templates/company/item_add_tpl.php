@@ -287,7 +287,8 @@ if(in_array('bct',$config['company'])) { ?>
     <div class="formRow">
       <label>Code Iframe bản đồ</label>
       <div class="formRight">
-        <textarea rows="8" cols="" class="tipS description_input" name="bando" original-title="Nhập mã nhúng bản đồ"><?=@$item['bando']?></textarea>
+        <textarea rows="8" cols="" class="tipS description_input" name="bando"
+         original-title="Nhập mã nhúng bản đồ"><?=@$item['bando']?></textarea>
       </div>
       <div class="clear"></div>
     </div>

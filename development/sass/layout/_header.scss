@@ -2,7 +2,9 @@
 // This file contains all styles related to the header of the site/application.
 // -----------------------------------------------------------------------------
 .header{
-  position: relative;
+  @include relative($left: 0px, $top: 0px);
+  width: 100%;
+  background-color: #fff;
   z-index: 500;
   &-top{
     background-color: $header_top-bg;
@@ -16,6 +18,7 @@
         margin-right: 5px;
       }
     }
+    
   }
   &-bot{
     border-bottom: 4px solid $theme-color;
@@ -29,7 +32,20 @@
       max-width: percentage(300/$max-width);
       text-align: center;
       &-img{
+        @include when-inside(".fixed"){
+          max-height: 60px;
+        }
+      }
+    }
+  }
+  @include when-inside(".fixed"){
+    &-top{
+    display: none;
 
+    }
+    &-bot{
+      .container{
+        min-height: auto;
       }
     }
   }

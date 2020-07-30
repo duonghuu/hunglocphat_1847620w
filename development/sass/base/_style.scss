@@ -530,7 +530,7 @@ form#frm_dknt {
 div.main_content {
     position: relative;
     z-index: 5;
-    margin: em(30) auto;
+    margin: em(30) auto em(60); 
     overflow: hidden;
     @at-root .clstrangchu #{&},.clsindex #{&} {
     }
@@ -539,7 +539,6 @@ div.main_content {
         width: percentage(280/$max-width);
         z-index: 50;
         float: right;
-
     }
 
     div.right {
@@ -547,7 +546,18 @@ div.main_content {
         width: percentage(880/$max-width);
     }
 }
+.clsabout,.clsduan,.clsduan_detail{
+    div.main_content {
 
+        div.left {
+            display: none;
+        }
+        div.right {
+            width: 100%;
+            float: none;
+        }
+    }
+}
 .full-content {
     width: 100%;
 }

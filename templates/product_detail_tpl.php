@@ -6,51 +6,7 @@
     $thumbhinhcon = '';
     $img_row_detail = _upload_sanpham_l.$row_detail["thumb"];
     ?>
-    <div class="zoom_slick">
-      <div id="bs-carousel<?= $row_detail["id"] ?>" class="mybs-carousel carousel slide" data-ride="carousel">
-        <div class="carousel-slider">
-          <!-- The slideshow -->
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <a data-fancybox="gallery27" data-caption="<?= $row_detail["ten"] ?>" 
-                href="<?= _upload_sanpham_l.$row_detail["photo"] ?>">
-                <img src="<?= $img_row_detail ?>" alt="<?= $row_detail["ten"] ?>">
-              </a>
-            </div>
-            <?php foreach ($hinhthem as $k_hinh => $v_hinh) { 
-              $img_hinhthem = _upload_hinhthem_l.$v_hinh["thumb"];
-              ?>
-              <div class="carousel-item">
-                <a data-fancybox="gallery27" data-caption="<?= $row_detail["ten"] ?>" 
-                  href="<?= _upload_hinhthem_l.$v_hinh["photo"] ?>">
-                  <img src="<?= $img_hinhthem ?>" alt="<?= $row_detail["ten"] ?>">
-                </a>
-              </div>
-              <?php } ?>
-          </div>
-              <!-- Left and right controls -->
-          <a class="carousel-control-prev" href="#bs-carousel<?= $row_detail["id"] ?>" data-slide="prev">
-            <span class="carousel-control-prev-icon"></span>
-          </a>
-          <a class="carousel-control-next" href="#bs-carousel<?= $row_detail["id"] ?>" data-slide="next">
-            <span class="carousel-control-next-icon"></span>
-          </a>
-        </div>
-        <!-- Indicators -->
-        <ul class="carousel-indicators scrollstyle-4">
-          <li data-target="#bs-carousel<?= $row_detail["id"] ?>" data-slide-to="0" class="active">
-            <figure><img src="<?= $img_row_detail ?>" alt="<?= $row_detail["ten"] ?>"></figure>
-          </li>
-          <?php foreach ($hinhthem as $k_hinh => $v_hinh) { 
-            $img_hinhthem = _upload_hinhthem_l.$v_hinh["thumb"];
-            ?>
-            <li data-target="#bs-carousel<?= $row_detail["id"] ?>" data-slide-to="<?= $k_hinh+1 ?>">
-              <figure><img src="<?= $img_hinhthem ?>" alt="<?= $row_detail["ten"] ?>"></figure>
-            </li>
-          <?php } ?>
-        </ul>
-      </div>
-   </div><!--.zoom_slick-->
+    
    <div class="product_info">
     <div class="ten li"><?=$row_detail['ten']?></div>
     <?php 
@@ -139,6 +95,56 @@
 <?php } ?>&nbsp;&nbsp;<b class="num_danhgia"><?=$num_danhgiasao?>/5</b></div> </div> */?>
     <div class="li"><?php include _template."layout/share.php";?></div>
 </div>
+ <div class="zoom_slick">
+  <?php if(!empty($row_detail["toado"])){ ?>
+  <div class="codebando mb-5">
+    <?= $row_detail["toado"] ?>
+  </div>
+<?php } ?>
+   <div id="bs-carousel<?= $row_detail["id"] ?>" class="mybs-carousel carousel slide" data-ride="carousel">
+     <div class="carousel-slider">
+       <!-- The slideshow -->
+       <div class="carousel-inner">
+         <div class="carousel-item active">
+           <a data-fancybox="gallery27" data-caption="<?= $row_detail["ten"] ?>" 
+             href="<?= _upload_sanpham_l.$row_detail["photo"] ?>">
+             <img src="<?= $img_row_detail ?>" alt="<?= $row_detail["ten"] ?>">
+           </a>
+         </div>
+         <?php foreach ($hinhthem as $k_hinh => $v_hinh) { 
+           $img_hinhthem = _upload_hinhthem_l.$v_hinh["thumb"];
+           ?>
+           <div class="carousel-item">
+             <a data-fancybox="gallery27" data-caption="<?= $row_detail["ten"] ?>" 
+               href="<?= _upload_hinhthem_l.$v_hinh["photo"] ?>">
+               <img src="<?= $img_hinhthem ?>" alt="<?= $row_detail["ten"] ?>">
+             </a>
+           </div>
+           <?php } ?>
+       </div>
+           <!-- Left and right controls -->
+       <a class="carousel-control-prev" href="#bs-carousel<?= $row_detail["id"] ?>" data-slide="prev">
+         <span class="carousel-control-prev-icon"></span>
+       </a>
+       <a class="carousel-control-next" href="#bs-carousel<?= $row_detail["id"] ?>" data-slide="next">
+         <span class="carousel-control-next-icon"></span>
+       </a>
+     </div>
+     <!-- Indicators -->
+     <ul class="carousel-indicators scrollstyle-4">
+       <li data-target="#bs-carousel<?= $row_detail["id"] ?>" data-slide-to="0" class="active">
+         <figure><img src="<?= $img_row_detail ?>" alt="<?= $row_detail["ten"] ?>"></figure>
+       </li>
+       <?php foreach ($hinhthem as $k_hinh => $v_hinh) { 
+         $img_hinhthem = _upload_hinhthem_l.$v_hinh["thumb"];
+         ?>
+         <li data-target="#bs-carousel<?= $row_detail["id"] ?>" data-slide-to="<?= $k_hinh+1 ?>">
+           <figure><img src="<?= $img_hinhthem ?>" alt="<?= $row_detail["ten"] ?>"></figure>
+         </li>
+       <?php } ?>
+     </ul>
+   </div>
+</div><!--.zoom_slick-->
 </div><!--.wap_pro-->
 
 <!-- Nav tabs -->
